@@ -52,8 +52,8 @@
 
   --logo-symbol: url('../assets/images/logo-mono-white.png');
 
-  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -138,6 +138,7 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-weight: 500;
   background-color: var(--bg-body);
   color: var(--text-primary);
   line-height: 1.65;
@@ -257,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-platinum);
@@ -301,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-title {
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   margin-bottom: 1rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .section-subtitle {
@@ -318,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.6rem;
   padding: 0.85rem 1.75rem;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-normal);
@@ -454,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
   position: relative;
   padding: 0.4rem 0;
@@ -614,7 +615,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(10px);
   border-radius: var(--radius-full);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-platinum);
   margin-bottom: 1.75rem;
 }
@@ -629,7 +630,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
@@ -678,7 +679,7 @@ h1, h2, h3, h4, h5, h6 {
 .metric-value {
   font-family: var(--font-heading);
   font-size: clamp(1.85rem, 2.8vw, 2.5rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent-white);
   line-height: 1.1;
   margin-bottom: 0.35rem;
@@ -687,7 +688,7 @@ h1, h2, h3, h4, h5, h6 {
 .metric-label {
   font-size: 0.85rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -910,7 +911,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-platinum);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1106,7 +1107,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
 }
@@ -1215,7 +1216,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem 1.25rem;
   background: var(--tint-03);
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
@@ -1234,7 +1235,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-table td.job-name {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -1302,7 +1303,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .gallery-caption {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   /* Overlay background is a fixed dark scrim in both themes, so the text
      must stay light regardless of the active theme's text color tokens. */
   color: #f8fafc;
@@ -1369,7 +1370,7 @@ h1, h2, h3, h4, h5, h6 {
 .team-role {
   font-size: 0.85rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1410,7 +1411,7 @@ h1, h2, h3, h4, h5, h6 {
 .legal-label {
   font-size: 0.9rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .legal-val {
@@ -1536,7 +1537,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-label {
   display: block;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
