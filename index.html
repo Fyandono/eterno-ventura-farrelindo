@@ -10,10 +10,10 @@
     (function () {
       try {
         var saved = localStorage.getItem('evf-theme');
-        var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        var theme = saved || 'light';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
   </script>
@@ -25,7 +25,7 @@
   <meta name="keywords" content="PT Eterno Ventura Farrelindo, outsourcing bandung, jasa alih daya jawa barat, cleaning service pemerintah, pengadaan inaproc lkpp, driver operasional, admin perkantoran">
   <meta name="author" content="PT Eterno Ventura Farrelindo">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#08090a">
+  <meta name="theme-color" content="#f8fafc">
   <link rel="canonical" href="https://www.evf.com/">
 
   <!-- Open Graph / Social Sharing -->

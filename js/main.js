@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggle) {
     // Sync the toggle's ARIA state with whatever the inline head script already applied
-    applyTheme(rootEl.getAttribute('data-theme') || 'dark');
+    applyTheme(rootEl.getAttribute('data-theme') || 'light');
 
     themeToggle.addEventListener('click', () => {
-      const current = rootEl.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const current = rootEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       applyTheme(current === 'light' ? 'dark' : 'light');
     });
   }

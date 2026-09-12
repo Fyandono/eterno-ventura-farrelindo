@@ -4,69 +4,8 @@
    ========================================================================== */
 
 /* --- CSS Variables & Design Tokens --- */
-/* Dark theme is the default (no [data-theme] attribute needed) */
+/* Light theme is the default (no [data-theme] attribute needed) */
 :root,
-:root[data-theme="dark"] {
-  --bg-body: #08090a;
-  --bg-surface: #101214;
-  --bg-card: #15181c;
-  --bg-card-hover: #1c2026;
-  --bg-subtle: #22272f;
-  --bg-glass: rgba(16, 18, 20, 0.85);
-
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #8695a8;
-  --text-inverse: #0f172a;
-
-  --accent-white: #ffffff;
-  --accent-white-hover: #e2e8f0;
-  --accent-platinum: #e2e8f0;
-  --accent-red: #ef4444;
-  --accent-red-hover: #dc2626;
-  --accent-glow: rgba(239, 68, 68, 0.15);
-  --hero-scrim: 8, 9, 10;
-  --footer-bg: #040506;
-  --badge-scrim: rgba(8, 9, 10, 0.85);
-
-  --tint-02: rgba(255, 255, 255, 0.02);
-  --tint-03: rgba(255, 255, 255, 0.03);
-  --tint-04: rgba(255, 255, 255, 0.04);
-  --tint-05: rgba(255, 255, 255, 0.05);
-  --tint-06: rgba(255, 255, 255, 0.06);
-  --tint-08: rgba(255, 255, 255, 0.08);
-  --tint-10: rgba(255, 255, 255, 0.1);
-  --tint-16: rgba(255, 255, 255, 0.16);
-  --tint-30: rgba(255, 255, 255, 0.3);
-  --glow-primary-sm: rgba(255, 255, 255, 0.15);
-  --glow-primary-lg: rgba(255, 255, 255, 0.25);
-
-  --border-subtle: var(--tint-08);
-  --border-medium: var(--tint-16);
-  --border-highlight: var(--tint-30);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8);
-  --shadow-glow: 0 0 25px var(--tint-08);
-
-  --logo-symbol: url('../assets/images/logo-mono-white.png');
-
-  --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-full: 9999px;
-
-  --container-max: 1200px;
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* --- Light Theme Overrides --- */
 :root[data-theme="light"] {
   --bg-body: #f8fafc;
   --bg-surface: #ffffff;
@@ -112,6 +51,67 @@
   --shadow-glow: 0 0 25px rgba(15, 23, 42, 0.06);
 
   --logo-symbol: url('../assets/images/logo-mono-black.png');
+
+  --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --container-max: 1200px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark Theme Overrides --- */
+:root[data-theme="dark"] {
+  --bg-body: #08090a;
+  --bg-surface: #101214;
+  --bg-card: #15181c;
+  --bg-card-hover: #1c2026;
+  --bg-subtle: #22272f;
+  --bg-glass: rgba(16, 18, 20, 0.85);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #8695a8;
+  --text-inverse: #0f172a;
+
+  --accent-white: #ffffff;
+  --accent-white-hover: #e2e8f0;
+  --accent-platinum: #e2e8f0;
+  --accent-red: #ef4444;
+  --accent-red-hover: #dc2626;
+  --accent-glow: rgba(239, 68, 68, 0.15);
+  --hero-scrim: 8, 9, 10;
+  --footer-bg: #040506;
+  --badge-scrim: rgba(8, 9, 10, 0.85);
+
+  --tint-02: rgba(255, 255, 255, 0.02);
+  --tint-03: rgba(255, 255, 255, 0.03);
+  --tint-04: rgba(255, 255, 255, 0.04);
+  --tint-05: rgba(255, 255, 255, 0.05);
+  --tint-06: rgba(255, 255, 255, 0.06);
+  --tint-08: rgba(255, 255, 255, 0.08);
+  --tint-10: rgba(255, 255, 255, 0.1);
+  --tint-16: rgba(255, 255, 255, 0.16);
+  --tint-30: rgba(255, 255, 255, 0.3);
+  --glow-primary-sm: rgba(255, 255, 255, 0.15);
+  --glow-primary-lg: rgba(255, 255, 255, 0.25);
+
+  --border-subtle: var(--tint-08);
+  --border-medium: var(--tint-16);
+  --border-highlight: var(--tint-30);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 0 25px var(--tint-08);
+
+  --logo-symbol: url('../assets/images/logo-mono-white.png');
 }
 
 /* Smooth cross-theme transition for the core surfaces */
@@ -525,13 +525,13 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-/* Dark mode (default): show moon icon */
-:root:not([data-theme="light"]) .theme-icon-moon {
+/* Dark mode: show moon icon */
+:root[data-theme="dark"] .theme-icon-moon {
   display: block;
 }
 
-/* Light mode: show sun icon */
-:root[data-theme="light"] .theme-icon-sun {
+/* Light mode (default): show sun icon */
+:root:not([data-theme="dark"]) .theme-icon-sun {
   display: block;
 }
 
