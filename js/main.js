@@ -302,21 +302,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCap = document.getElementById('lightboxCap');
   const lightboxClose = document.getElementById('lightboxClose');
-  const galleryItems = document.querySelectorAll('[data-lightbox-src]');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  // Hanya kartu utama (.gallery-item / tombol legalitas) yang bisa diklik untuk
+  // membuka lightbox. Kartu "-extra" tersembunyi dan hanya menyumbang foto
+  // tambahan ke dalam grup navigasinya, tidak berdiri sebagai kartu sendiri.
+  const galleryItems = document.querySelectorAll('.gallery-item[data-lightbox-src], .legal-badge-btn[data-lightbox-src]');
   let lastFocusedElement = null;
+  // Foto-foto dengan data-lightbox-group yang sama (satu lokasi/instansi)
+  // dikelompokkan agar bisa dinavigasi dengan tombol next/prev di lightbox.
+  let currentGroup = [];
+  let currentIndex = -1;
 
-  function openLightbox(item) {
+  function getGroupFor(item) {
+    const groupKey = item.getAttribute('data-lightbox-group');
+    if (!groupKey) return [item];
+    return Array.from(document.querySelectorAll(`[data-lightbox-group="${groupKey}"]`));
+  }
+
+  function renderLightbox(item) {
     const src = item.getAttribute('data-lightbox-src');
     const caption = item.getAttribute('data-lightbox-caption') || '';
-    if (lightbox && lightboxImg && src) {
-      lastFocusedElement = document.activeElement;
+    if (lightboxImg && src) {
       lightboxImg.src = src;
       lightboxImg.alt = caption;
       if (lightboxCap) lightboxCap.innerText = caption;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (lightboxClose) lightboxClose.focus();
     }
+  }
+
+  function updateNavVisibility() {
+    const hasNav = currentGroup.length > 1;
+    if (lightboxPrev) lightboxPrev.hidden = !hasNav;
+    if (lightboxNext) lightboxNext.hidden = !hasNav;
+  }
+
+  function openLightbox(item) {
+    if (!lightbox || !lightboxImg) return;
+    currentGroup = getGroupFor(item);
+    currentIndex = currentGroup.indexOf(item);
+    if (currentIndex === -1) currentIndex = 0;
+
+    lastFocusedElement = document.activeElement;
+    renderLightbox(item);
+    updateNavVisibility();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (lightboxClose) lightboxClose.focus();
+  }
+
+  function showRelative(offset) {
+    if (!currentGroup.length) return;
+    currentIndex = (currentIndex + offset + currentGroup.length) % currentGroup.length;
+    renderLightbox(currentGroup[currentIndex]);
   }
 
   function closeLightbox() {
@@ -339,6 +376,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showRelative(-1);
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showRelative(1);
+    });
+  }
+
   if (lightboxClose && lightbox) {
     lightboxClose.addEventListener('click', closeLightbox);
 
@@ -349,8 +400,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') {
         closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showRelative(-1);
+      } else if (e.key === 'ArrowRight') {
+        showRelative(1);
       }
     });
   }

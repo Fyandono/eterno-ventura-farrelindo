@@ -1272,6 +1272,27 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-subtle);
 }
 
+/* Foto tambahan per lokasi tidak ditampilkan sebagai kartu terpisah di grid;
+   perannya hanya menyimpan data agar bisa dinavigasi (next/prev) di dalam
+   lightbox saat kartu utama lokasi tersebut dibuka. */
+.gallery-item-extra {
+  display: none;
+}
+
+.gallery-count {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f8fafc;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -1672,13 +1693,20 @@ textarea.form-control {
 
 .lightbox-content {
   position: relative;
-  max-width: 900px;
+  /* Lebar tetap agar posisi tombol navigasi tidak ikut bergeser saat
+     berpindah antar foto dengan orientasi/rasio yang berbeda-beda. */
+  width: min(720px, 90vw);
   max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lightbox-content img {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 75vh;
+  width: auto;
+  object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-medium);
@@ -1700,6 +1728,56 @@ textarea.form-control {
   color: var(--text-primary);
   font-size: 1.75rem;
   cursor: pointer;
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 15, 15, 0.65);
+  color: #f8fafc;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.lightbox-nav:hover {
+  background: rgba(15, 15, 15, 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev {
+  left: clamp(0.75rem, 4vw, 2.5rem);
+}
+
+.lightbox-next {
+  right: clamp(0.75rem, 4vw, 2.5rem);
+}
+
+@media (max-width: 640px) {
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+  }
 }
 
 /* Floating WhatsApp Button (dinonaktifkan sementara di HTML) */
