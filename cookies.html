@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Apply saved/preferred theme before first paint to avoid a light/dark flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('evf-theme');
+        var theme = saved || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <title>Kebijakan Cookie | PT Eterno Ventura Farrelindo</title>
+  <meta name="description" content="Jenis cookie yang digunakan situs PT Eterno Ventura Farrelindo dan cara mengaturnya.">
+  <meta name="author" content="PT Eterno Ventura Farrelindo">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Favicon (brand monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1114'/%3E%3Ctext x='32' y='41' font-family='Arial, Helvetica, sans-serif' font-size='22' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EEVF%3C/text%3E%3C/svg%3E">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/vendor/cookieconsent.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar scrolled" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="Beranda PT Eterno Ventura Farrelindo">
+        <span class="brand-symbol">
+          <img src="assets/images/logo-full-white.png" alt="Logo Eterno Ventura Farrelindo" class="logo-icon logo-icon-dark" width="147" height="100" loading="eager">
+          <img src="assets/images/logo-full-black.png" alt="Logo Eterno Ventura Farrelindo" class="logo-icon logo-icon-light" width="147" height="100" loading="eager">
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">Kembali ke beranda</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="container">
+      <h1>Kebijakan Cookie</h1>
+      <p class="legal-updated">Terakhir diperbarui: 1 Oktober 2026</p>
+
+      <h2>Apa itu cookie?</h2>
+      <p>
+        Cookie adalah file kecil yang disimpan peramban Anda saat mengunjungi situs web. Cookie membantu situs mengingat pilihan Anda atau memahami cara situs digunakan.
+      </p>
+
+      <h2>Cookie yang kami gunakan</h2>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th scope="col">Nama</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Tujuan</th>
+              <th scope="col">Masa berlaku</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>cc_cookie</code></td>
+              <td>Diperlukan</td>
+              <td>Menyimpan pilihan persetujuan cookie Anda</td>
+              <td>12 bulan</td>
+            </tr>
+            <tr>
+              <td><code>_ga</code></td>
+              <td>Analitik</td>
+              <td>Membedakan pengunjung (Google Analytics)</td>
+              <td>2 tahun</td>
+            </tr>
+            <tr>
+              <td><code>_ga_&lt;ID&gt;</code></td>
+              <td>Analitik</td>
+              <td>Menyimpan status sesi (Google Analytics)</td>
+              <td>2 tahun</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Cookie analitik <strong>hanya</strong> dipasang setelah Anda memberikan persetujuan. Jika Anda menolak atau menarik persetujuan, cookie analitik akan dihapus. Fitur periklanan dan Google Signals kami nonaktifkan. Cara kami memproses data dijelaskan di <a href="privacy.html">Kebijakan Privasi</a>.
+      </p>
+      <p>
+        Pilihan tema terang/gelap disimpan di penyimpanan lokal peramban Anda (<em>local storage</em>), bukan sebagai cookie, dan tidak dikirim ke server.
+      </p>
+      <p>
+        Peta Google Maps di bagian Kontak dimuat dari domain Google. Cookie yang mungkin dipasang Google di dalam peta tersebut diatur oleh Google, bukan oleh kami; lihat <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Kebijakan Privasi Google</a>.
+      </p>
+
+      <h2>Mengatur pilihan Anda</h2>
+      <p>
+        Anda dapat mengubah pilihan kapan saja melalui tombol &ldquo;Pengaturan Cookie&rdquo; di bagian bawah halaman, atau melalui pengaturan peramban Anda.
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary btn-sm" data-cookie-settings>Pengaturan Cookie</button>
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 PT Eterno Ventura Farrelindo. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="privacy.html">Kebijakan Privasi</a>
+          <a href="cookies.html">Kebijakan Cookie</a>
+          <button type="button" data-cookie-settings>Pengaturan Cookie</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie consent + Google Analytics (dimuat hanya setelah disetujui) -->
+  <script src="js/vendor/cookieconsent.umd.js"></script>
+  <script src="js/consent.js"></script>
+</body>
+</html>

@@ -1672,6 +1672,138 @@ textarea.form-control {
   color: var(--text-muted);
 }
 
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.footer-legal button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.footer-legal a:hover,
+.footer-legal button:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   COOKIE CONSENT (vanilla-cookieconsent) - mengikuti token tema
+   ========================================================================== */
+:root #cc-main {
+  --cc-font-family: var(--font-body);
+  --cc-modal-border-radius: var(--radius-md);
+  --cc-btn-border-radius: var(--radius-md);
+  --cc-bg: var(--bg-card);
+  --cc-primary-color: var(--text-primary);
+  --cc-secondary-color: var(--text-secondary);
+  --cc-btn-primary-bg: var(--accent-white);
+  --cc-btn-primary-color: var(--text-inverse);
+  --cc-btn-primary-border-color: var(--accent-white);
+  --cc-btn-primary-hover-bg: var(--accent-white-hover);
+  --cc-btn-primary-hover-color: var(--text-inverse);
+  --cc-btn-primary-hover-border-color: var(--accent-white-hover);
+  --cc-btn-secondary-bg: var(--accent-white);
+  --cc-btn-secondary-color: var(--text-inverse);
+  --cc-btn-secondary-border-color: var(--accent-white);
+  --cc-btn-secondary-hover-bg: var(--accent-white-hover);
+  --cc-btn-secondary-hover-color: var(--text-inverse);
+  --cc-btn-secondary-hover-border-color: var(--accent-white-hover);
+  --cc-toggle-on-bg: var(--accent-white);
+  --cc-link-color: var(--text-primary);
+}
+
+#cc-main a {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   HALAMAN LEGAL (cookies.html)
+   ========================================================================== */
+.legal-page {
+  padding: 9rem 0 5rem 0;
+}
+
+.legal-page .container {
+  max-width: 820px;
+}
+
+.legal-page h1 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 0.5rem;
+}
+
+.legal-page h2 {
+  font-size: 1.35rem;
+  margin: 2.5rem 0 0.75rem 0;
+}
+
+.legal-page p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.legal-page p a {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.legal-updated {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+}
+
+.legal-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.legal-table th,
+.legal-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.legal-table th {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.legal-table td {
+  color: var(--text-secondary);
+}
+
+.legal-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.legal-table code {
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--tint-06);
+  color: var(--text-primary);
+  font-size: 0.9em;
+}
+
 /* ==========================================================================
    MODAL / LIGHTBOX
    ========================================================================== */
